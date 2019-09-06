@@ -9,5 +9,10 @@
             "email": "julien@kiboko.fr"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-0": {
+            "Patterns": "src/"
+        }
+    }
 }
