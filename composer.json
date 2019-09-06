@@ -11,8 +11,8 @@
     ],
     "require": {},
     "autoload": {
-        "psr-0": {
-            "Patterns": "src/"
+        "psr-4": {
+            "Patterns\\": "src/Patterns/"
         }
     }
 }
