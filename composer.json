@@ -1,0 +1,13 @@
+{
+    "name": "programgames/designpatterns",
+    "description": "design pattern training",
+    "type": "project",
+    "license": "GNU GPLv3",
+    "authors": [
+        {
+            "name": "julien",
+            "email": "julien@kiboko.fr"
+        }
+    ],
+    "require": {}
+}
