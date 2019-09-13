@@ -12,7 +12,9 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Patterns\\": "src/Patterns/"
+            "Patterns\\": "src/Patterns/",
+            "Factory\\": "src/Patterns/Factory/",
+            "vendor\\": "vendor/"
         }
     }
 }
