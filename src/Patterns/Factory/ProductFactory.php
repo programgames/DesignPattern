@@ -6,15 +6,15 @@ namespace Patterns\Factory;
 
 abstract class ProductFactory
 {
-    abstract public function getProduct() : ProductInterface;
+    abstract public function createProduct() : ProductInterface;
 
-    public function createProduct():string
+    public function displayProduct():string
     {
         echo "Creating a Product ....";
 
-        $product = $this->getProduct();
+        $product = $this->createProduct();
 
         echo "Calling a product base function from the factory";
-        $product->displayName();
+        echo $product->getName();
     }
 }

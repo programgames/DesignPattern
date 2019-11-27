@@ -6,5 +6,5 @@ namespace Patterns\Factory;
 
 interface ProductInterface
 {
-    public function displayName(): string;
+    public function getName(): string;
 }

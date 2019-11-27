@@ -7,7 +7,7 @@ namespace Patterns\Factory;
 class ConfigurableProductFactory extends ProductFactory
 {
 
-    public function getProduct(): ProductInterface
+    public function createProduct(): ProductInterface
     {
         return new ConfigurableProduct();
     }

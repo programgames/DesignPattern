@@ -8,8 +8,8 @@ class SimpleProduct implements ProductInterface
 {
     const NAME = "SIMPLE PRODUCT";
 
-    public function displayName(): string
+    public function getName(): string
     {
-        echo self::NAME;
+        return self::NAME;
     }
 }

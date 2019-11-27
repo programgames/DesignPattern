@@ -8,5 +8,3 @@ require 'clientCode.php';
 
 echo "App: Launched with the SimpleProductFactory.\n";
 clientCode(new SimpleProductFactory());
-echo "issou";
-echo "\n\n";
