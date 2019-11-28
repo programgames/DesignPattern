@@ -11,6 +11,6 @@ class ConfigurableProduct implements ProductInterface
 
     public function getName(): string
     {
-        echo self::NAME;
+        return self::NAME;
     }
 }
