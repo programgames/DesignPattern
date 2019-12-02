@@ -5,6 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/vendor" isTestSource="false" packagePrefix="vendor\" />
       <sourceFolder url="file://$MODULE_DIR$/src/Patterns" isTestSource="false" packagePrefix="Patterns\" />
       <sourceFolder url="file://$MODULE_DIR$/src/Patterns/Factory" isTestSource="false" packagePrefix="Factory\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Patterns/AbstractFactory" isTestSource="false" packagePrefix="AbstractFactory\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Patterns/Builder" isTestSource="false" packagePrefix="Builder\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
     </content>
     <orderEntry type="inheritedJdk" />
