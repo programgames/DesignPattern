@@ -13,24 +13,6 @@ Le pattern peut nous permettre de renvoyer un objet de type DBMySql ou DBOracle 
 Example : 
 
 ```
-class DBFactory {
-    public static function create ($connectionString){
-       if (($driverEndPos = strpos ($connectionString, ':')) === false){
-          throw new Exception ('Mauvaise chaine de connexion');
-       }
- 
-       switch (substr ($connectionString, 0, $driverEndPos)){
-          case 'mysql':
-             $db = new DBMySql ($connectionString1);
-             break;
-          case 'oracle':
-             $db = new DBOracle ($connectionString1);
-             break;
-          default:
-             throw new Exception ('Type de base inconnu');
-       }
-       return $db;
-    }
- }
+
 ```
 
