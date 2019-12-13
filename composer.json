@@ -15,6 +15,8 @@
             "Patterns\\": "src/Patterns/",
             "Factory\\": "src/Patterns/Factory/",
             "Prototype\\": "src/Patterns/Prototype/",
+            "Builder\\": "src/Patterns/Builder/",
+            "AbstractFactory\\": "src/Patterns/AbstractFactory/",
             "vendor\\": "vendor/"
         }
     }
