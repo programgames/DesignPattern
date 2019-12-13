@@ -14,6 +14,7 @@
         "psr-4": {
             "Patterns\\": "src/Patterns/",
             "Factory\\": "src/Patterns/Factory/",
+            "Prototype\\": "src/Patterns/Prototype/",
             "vendor\\": "vendor/"
         }
     }
