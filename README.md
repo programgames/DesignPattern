@@ -2,7 +2,7 @@
 
 Un design pattern est une solution a un problème de conception récurrent.
 
-En d'autre te
+En d'autre termes les design patterns sont des facon d'organiser son code , un modele a suivre pour 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTE4MzIyNyw1NDMxMTgyMzVdfQ==
+eyJoaXN0b3J5IjpbMTA3Mjc3OTEwMCw1NDMxMTgyMzVdfQ==
 -->
