@@ -1,20 +1,20 @@
 # Présentation
 
-Le pattern factory est un pattern de création.
-Il permet de mettre en place une interface permettant de créer des objets dans une 'super-classe'.
-Mais permet au sous-classes de changer le type d'objet créée, ces sous classes sont appellé les 'Creators' tandis
+Le pattern factory est un design pattern de création.
+Il permet de mettre en place une interface permettant de créer des objets dans une "super-classe".
+Mais permet aux sous-classes de changer le type d'objet créé, ces sous-classes sont les "Créateurs" tandis
 que la super classe, la factory.
 
 # Utilité
 
-Création d'objet dont on ne 'sait pas' le type dans le futur mais uniquement le type de comportement (l'interface).
-Example on veut une nouvelle connection de base de donnée avec une query string.
-Le pattern peut nous permettre de renvoyer un objet de type DBMySql ou DBOracle selon la query string.
+Création d'objet dont on ne sait pas précisément le type dans le futur mais uniquement le type de comportement (l'interface).
+Example : on veut une nouvelle connexion de base de données avec une query string.
+Le pattern peut nous permettre de renvoyer un objet du type DBMySql ou DBOracle selon la query string.
 
-Il permet de séparer le création de l'utilisation d'un objet, de plus il permet d'etendre facilement les objets utilisé
-simplement en créant de nouveaux 'createur d'objet' héritant d'une classe de base.
+Il permet de séparer la création de l'utilisation d'un objet, de plus il permet d'étendre facilement les objets utilisés
+simplement en créant de nouveaux "créateurs d'objets" héritant d'une classe de base.
 
-Les 'creators' peuvent trés bien intégré de la logique métier.
+Les 'créateurs' peuvent très bien intégré de la logique métier.
 
 Les createurs ne sont pas forcé de reélement créer l'objet , il peut aller les chercher depuis une bdd, le cache ...
 
