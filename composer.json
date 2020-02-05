@@ -12,11 +12,11 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Patterns\\": "src/Patterns/",
-            "Factory\\": "src/Patterns/Factory/",
-            "Prototype\\": "src/Patterns/Prototype/",
-            "Builder\\": "src/Patterns/Builder/",
-            "AbstractFactory\\": "src/Patterns/AbstractFactory/",
+            "Creational\\": "src/Patterns/Creational",
+            "Factory\\": "src/Patterns/Creational/Factory/",
+            "Prototype\\": "src/Patterns/Creational/Prototype/",
+            "Builder\\": "src/Patterns/Creational/Builder/",
+            "AbstractFactory\\": "src/Patterns/Creational/AbstractFactory/",
             "vendor\\": "vendor/"
         }
     }

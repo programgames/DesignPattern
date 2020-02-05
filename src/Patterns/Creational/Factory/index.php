@@ -1,9 +1,10 @@
 <?php
 
-require __DIR__ . './../../../vendor/autoload.php';
+use Factory\ConfigurableProductFactory;
+use Factory\SimpleProductFactory;
 
-use Patterns\Factory\SimpleProductFactory;
-use Patterns\Factory\ConfigurableProductFactory;
+require __DIR__ . './../../../../vendor/autoload.php';
+
 
 require 'clientCode.php';
 

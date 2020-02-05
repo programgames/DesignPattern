@@ -1,17 +1,16 @@
 <?php
 
 
-namespace Patterns\AbstractFactory;
+namespace AbstractFactory;
 
 
-class B2BPrice implements Price
+class B2CPrice implements Price
 {
-
     /**
      * @return string
      */
     public function getValue(): string
     {
-        return "20000 $";
+        return "20 $";
     }
 }

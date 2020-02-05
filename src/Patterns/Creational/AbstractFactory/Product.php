@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Patterns\AbstractFactory;
+namespace AbstractFactory;
 
 
 interface Product

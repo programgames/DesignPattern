@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Patterns\Factory;
+namespace Factory;
 
 
 interface ProductInterface

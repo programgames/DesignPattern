@@ -1,8 +1,7 @@
 <?php
 
 
-namespace Patterns\Factory;
-
+namespace Factory;
 
 class SimpleProductFactory extends ProductFactory
 {

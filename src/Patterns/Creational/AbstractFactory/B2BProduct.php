@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Patterns\AbstractFactory;
+namespace AbstractFactory;
 
 
 class B2BProduct implements Product

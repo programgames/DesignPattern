@@ -1,7 +1,6 @@
 <?php
 
-
-use Patterns\AbstractFactory\ProductPageFactory;
+use AbstractFactory\ProductPageFactory;
 
 function clientCode(ProductPageFactory $factory) {
 

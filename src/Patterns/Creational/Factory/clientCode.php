@@ -1,6 +1,6 @@
 <?php
 
-use Patterns\Factory\ProductFactory;
+use Factory\ProductFactory;
 
 function clientCode(ProductFactory $factory)
 {
