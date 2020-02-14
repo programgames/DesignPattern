@@ -18,4 +18,4 @@ Il permet de déléguer et de pouvoir ajouter des fonctionnement indéfinis de c
 Cela permet de réduire drastiquement le lien entre le code client et la classe concrete.
 Il permet d'ajouter des familles d'objets sans casser le code client.
 
-Respecte le S de SOLID.
+C'est une évolution du pattern factory pour obtenir plus de souplesse quand à la création d'objets.
