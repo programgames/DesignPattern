@@ -8,11 +8,11 @@ use Structural\Adapter\JsonClient;
 use Structural\Adapter\SerializedClient;
 use Structural\Adapter\SerializedToJsonAdapter;
 
-$message = [
+$data = [
     'message' => 'Hello world'
 ];
 
-$json = json_encode($message);
+$json = json_encode($data);
 
 echo "Client code is designed correctly and works with json:\n";
 $jsonClient = new JsonClient();
