@@ -9,14 +9,18 @@
             "email": "julien@kiboko.fr"
         }
     ],
-    "require": {},
+    "require": {
+      "ext-json": "*"
+    },
     "autoload": {
         "psr-4": {
             "Creational\\": "src/Patterns/Creational",
+            "Structural\\": "src/Patterns/Structural",
             "Factory\\": "src/Patterns/Creational/Factory/",
             "Prototype\\": "src/Patterns/Creational/Prototype/",
             "Builder\\": "src/Patterns/Creational/Builder/",
             "AbstractFactory\\": "src/Patterns/Creational/AbstractFactory/",
+            "Adapter\\": "src/Patterns/Structural/Adapter/",
             "vendor\\": "vendor/"
         }
     }
