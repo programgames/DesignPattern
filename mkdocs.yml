@@ -1,0 +1,12 @@
+site_name: Design Patterns
+repo_url: https://github.com/programgames/DesignPattern
+repo_name: Github
+site_description: Design Patterns examples in french
+site_author: Julien Marcon
+remote_branch: gh-pages
+dev_addr: 'localhost:8010'
+theme: readthedocs
+nav:
+    - Home: index.md
+    - About: about.md
+    - Abstract Factory: abstract-factory.md
