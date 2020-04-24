@@ -15,18 +15,20 @@ Les gros avantages des design datterns sont :
 - Ils sont facilement maintenables.
 
 
-Classification : 
+## Classification : 
 
 Il y a plusieurs niveaux de complexité, et de types de design patterns.
 
-
 Ici, 3 types de design patterns sont présenté :
 
-Design Patterns de création : Ils permettent une création d'objets flexibles et réutilisables dans le reste du code.
+### Design Patterns de création :
+Ils permettent une création d'objets flexibles et réutilisables dans le reste du code.
 
-Design Patterns de Structure : Ils permettent d'assembler des objets et classes dans des grosses structures,
+### Design Patterns de Structure :
+ Ils permettent d'assembler des objets et classes dans des grosses structures,
 tout en gardant la structure flexible. et efficace.
 
-Design Patterns de comportement : Ils mettent en place une bonne communication et d'assignation des responsabilités 
+### Design Patterns de comportement :
+Ils mettent en place une bonne communication et d'assignation des responsabilités 
 entre les objets.
 
