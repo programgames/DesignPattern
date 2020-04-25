@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Julien Marcon">
+  
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Abstract Factory - Design Patterns</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
@@ -24,7 +25,7 @@
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -35,52 +36,50 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> Design Patterns</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
+        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">Home</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../about/">About</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Création</span>
-    <ul class="subnav">
-                <li class=" current">
-                    
-    <a class="current" href="./">Abstract Factory</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#presentation">Présentation</a></li>
-    
-
-    <li class="toctree-l3"><a href="#utilite">Utilité</a></li>
-    
-
-    </ul>
-                </li>
-    </ul>
-	    </li>
-          
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Création</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Abstract Factory</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#utilite">Utilité</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exemple">Exemple :</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#linterface-de-la-factory">L'interface de la factory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#les-2-factory">Les 2 factory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#les-interface-metiers">Les interface métiers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#les-objets-metier">Les objets métier</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#le-code-client-cense-fonctionner-avec-nimporte-quel-productfactory">Le code client censé fonctionner avec n'importe quel ProductFactory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#et-le-code-qui-vas-tester-tout-ca">Et le code qui vas tester tout ça :</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#output">Output :</a>
+    </li>
         </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -112,6 +111,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -119,18 +119,224 @@
               
                 <h1 id="presentation">Présentation</h1>
 <p>Le pattern abstract factory est un pattern de création.
-Il permet de mettre en place une interface permettant de créer des familles d'objets dans une 'super-classe'.
-Mais permet au sous-classes de changer la famille d'objets créée, ces sous-classes sont appellé les 'Creators' tandis
-que la super classe, la factory.</p>
-<h1 id="utilite">Utilité</h1>
+Il permet de mettre en place une interface permettant de créer des familles d'objets dans une <strong>super-classe</strong>.
+Mais permet aux sous-classes de changer la famille d'objets créés, ces sous-classes sont appelés les <strong>Creators</strong> tandis
+que la super classe, la <strong>Factory</strong>.</p>
+<h2 id="utilite">Utilité</h2>
 <p>Création de famille d'objets dans une classe parente.</p>
-<p>Example on veut crééer une fenêtre d'application qui change selon si on est sur windows ou sur mac.
-On vas avoir une interface 'GuiFactory' implementé par la WinGuifactory ou la MacguiFactory qui elles vont créer des boutons, checkbox.
-Les boutons de Mac Ou windows reste des Button ( interface )</p>
-<p>Il permet de déléguer et de pouvoir ajouter des fonctionnement indéfinis de comportement par famille.</p>
-<p>Cela permet de réduire drastiquement le lien entre le code client et la classe concrete.
+<p>Exemple on veut créer une fenêtre d'application qui change selon si on est sur windows ou sur mac.
+On vas avoir une interface <strong>GuiFactory</strong> implementé par la <strong>WinGuifactory</strong> ou la <strong>MacguiFactory</strong> qui elles vont créer des boutons, checkbox.
+Les boutons de Mac Ou Windows reste des Button ( interface )</p>
+<p>Il permet de déléguer et de pouvoir ajouter des fonctionnements indéfinis de comportement par famille.</p>
+<p>Cela permet de réduire drastiquement le lien entre le code client et la classe concrète.
 Il permet d'ajouter des familles d'objets sans casser le code client.</p>
-<p>C'est une évolution du pattern factory pour obtenir plus de souplesse quand à la création d'objets.</p>
+<p>C'est une évolution du pattern factory pour obtenir plus de souplesse quant à la création d'objets.</p>
+<h2 id="exemple">Exemple :</h2>
+<p>Ici est présenté 2 factory héritant de la meme interface</p>
+<h4 id="linterface-de-la-factory">L'interface de la factory</h4>
+<pre><code>&lt;?php
+
+
+namespace AbstractFactory;
+
+
+interface ProductFactory
+{
+    public function createProduct() : Product;
+    public function createPrice(): Price;
+}
+</code></pre>
+
+<h4 id="les-2-factory">Les 2 factory</h4>
+<pre><code>&lt;?php
+
+
+namespace AbstractFactory;
+
+
+class B2BProductFactory implements ProductFactory
+{
+
+    public function createProduct(): Product
+    {
+        return new B2BProduct();
+    }
+
+    public function createPrice(): Price
+    {
+        return new B2BPrice();
+    }
+}
+</code></pre>
+
+<pre><code>&lt;?php
+
+
+namespace AbstractFactory;
+
+
+class B2CProductFactory implements ProductFactory
+{
+    public function createProduct(): Product
+    {
+        return new B2CProduct();
+    }
+
+    public function createPrice(): Price
+    {
+        return new B2CPrice();
+    }
+}
+</code></pre>
+
+<h4 id="les-interface-metiers">Les interface métiers</h4>
+<pre><code>&lt;?php
+
+
+namespace AbstractFactory;
+
+
+interface Product
+{
+    /**
+     * @return string
+     */
+    public function getName(): string;
+}
+</code></pre>
+
+<pre><code>&lt;?php
+
+
+namespace AbstractFactory;
+
+
+interface Price
+{
+    /**
+     * @return string
+     */
+    public function getValue() : string;
+}
+</code></pre>
+
+<h4 id="les-objets-metier">Les objets métier</h4>
+<pre><code>&lt;?php
+
+
+namespace AbstractFactory;
+
+
+class B2BPrice implements Price
+{
+
+    /**
+     * @return string
+     */
+    public function getValue(): string
+    {
+        return &quot;20000 $&quot;;
+    }
+}
+</code></pre>
+
+<pre><code>&lt;?php
+
+
+namespace AbstractFactory;
+
+
+class B2BProduct implements Product
+{
+    const B2BProduct = &quot;B2B PRODUCT&quot;;
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+       return self::B2BProduct;
+    }
+}
+</code></pre>
+
+<pre><code>&lt;?php
+
+
+namespace AbstractFactory;
+
+
+class B2CPrice implements Price
+{
+    /**
+     * @return string
+     */
+    public function getValue(): string
+    {
+        return &quot;20 $&quot;;
+    }
+}
+</code></pre>
+
+<pre><code>&lt;?php
+
+
+namespace AbstractFactory;
+
+
+class B2CProduct implements Product
+{
+    const NAME = &quot;B2C PRODUCT&quot;;
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return self::NAME;
+    }
+}
+</code></pre>
+
+<h4 id="le-code-client-cense-fonctionner-avec-nimporte-quel-productfactory">Le code client censé fonctionner avec n'importe quel ProductFactory</h4>
+<pre><code>&lt;?php
+
+use AbstractFactory\ProductFactory;
+
+function clientCode(ProductFactory $factory) {
+
+    $product = $factory-&gt;createProduct();
+    $price = $factory-&gt;createPrice();
+
+    echo &quot;TYPE :&quot; . $product-&gt;getName() . PHP_EOL;
+    echo &quot;PRIX :&quot; . $price-&gt;getValue() . PHP_EOL;
+}
+</code></pre>
+
+<h4 id="et-le-code-qui-vas-tester-tout-ca">Et le code qui vas tester tout ça :</h4>
+<pre><code>&lt;?php
+
+use AbstractFactory\B2BProductFactory;
+use AbstractFactory\B2CProductFactory;
+
+require __DIR__ . './../../../../vendor/autoload.php';
+require 'clientCode.php';
+
+echo &quot;Client: Testing client code with the first factory type:\n&quot;;
+clientCode(new B2BProductFactory());
+
+echo &quot;Client: Testing the same client code with the second factory type:\n&quot;;
+clientCode(new B2CProductFactory());
+</code></pre>
+
+<h4 id="output">Output :</h4>
+<pre><code>Client: Testing client code with the first factory type:
+TYPE :B2B PRODUCT
+PRIX :20000 $
+Client: Testing the same client code with the second factory type:
+TYPE :B2C PRODUCT
+PRIX :20 $
+</code></pre>
               
             </div>
           </div>
@@ -151,7 +357,7 @@ Il permet d'ajouter des familles d'objets sans casser le code client.</p>
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -161,7 +367,7 @@ Il permet d'ajouter des familles d'objets sans casser le code client.</p>
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -172,7 +378,11 @@ Il permet d'ajouter des familles d'objets sans casser le code client.</p>
 </div>
     <script>var base_url = '..';</script>
     <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

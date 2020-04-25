@@ -49,7 +49,7 @@ Ici est présenté 2 factory héritant de la meme interface
 {% include 'src/Patterns/Creational/AbstractFactory/Price.php' %}
 ```
 
-#### Les objets métier
+#### Les classes métier
 
 ```
 {% include 'src/Patterns/Creational/AbstractFactory/B2BPrice.php' %}
