@@ -11,5 +11,7 @@ nav:
     - About: about.md
     - Création :
           - Abstract Factory: abstract-factory.md
+          - Factory : factory.md
+          - Builder: builder.md
 plugins:
     - macros

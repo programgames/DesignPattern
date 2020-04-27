@@ -1,6 +1,6 @@
 # Présentation
 
-Le pattern abstract factory est un pattern de création.
+Le pattern abstract factory est un design pattern de création.
 Il permet de mettre en place une interface permettant de créer des familles d'objets dans une **super-classe**.
 Mais permet aux sous-classes de changer la famille d'objets créés, ces sous-classes sont appelés les **Creators** tandis
 que la super classe, la **Factory**.
@@ -49,7 +49,7 @@ Ici est présenté 2 factory héritant de la meme interface
 {% include 'src/Patterns/Creational/AbstractFactory/Price.php' %}
 ```
 
-#### Les objets métier
+#### Les classes métier
 
 ```
 {% include 'src/Patterns/Creational/AbstractFactory/B2BPrice.php' %}
