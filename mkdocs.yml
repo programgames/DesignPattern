@@ -13,5 +13,6 @@ nav:
           - Abstract Factory: abstract-factory.md
           - Factory : factory.md
           - Builder: builder.md
+          - Prototype: prototype.md
 plugins:
     - macros
