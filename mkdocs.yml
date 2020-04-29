@@ -15,5 +15,7 @@ nav:
           - Builder: builder.md
           - Prototype: prototype.md
           - Singleton: singleton.md
+    - Structurel:
+          - Adapter: adapter.md
 plugins:
     - macros
