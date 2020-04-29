@@ -14,5 +14,6 @@ nav:
           - Factory : factory.md
           - Builder: builder.md
           - Prototype: prototype.md
+          - Singleton: singleton.md
 plugins:
     - macros
