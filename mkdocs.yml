@@ -17,5 +17,6 @@ nav:
           - Singleton: singleton.md
     - Structurel:
           - Adapter: adapter.md
+          - Bridge: bridge.md
 plugins:
     - macros
