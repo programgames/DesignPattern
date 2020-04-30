@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Julien Marcon">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Factory - Design Patterns</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Factory";
+    var mkdocs_page_input_path = "factory.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Design Patterns</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Création</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../abstract-factory/">Abstract Factory</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Factory</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../builder/">Builder</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../prototype/">Prototype</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../singleton/">Singleton</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Structurel</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../adapter/">Adapter</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../bridge/">Bridge</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Design Patterns</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Création &raquo;</li>
+        
+      
+    
+    <li>Factory</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/programgames/DesignPattern/edit/master/docs/factory.md"
+          class="icon icon-github"> Edit on Github</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="presentation">Présentation</h1>
+<ul>
+<li>Le pattern factory est un design pattern de création.</li>
+<li>Il permet de mettre en place une interface permettant de créer des objets dans une "super-classe".</li>
+<li>Mais permet aux sous-classes de changer le type d'objet créé, ces sous-classes sont les <strong>Créateurs</strong> tandis
+que la super classe, la <strong>factory</strong>.</li>
+</ul>
+<h1 id="utilite">Utilité</h1>
+<ul>
+<li>
+<p>Création d'objet dont on ne sait pas précisément le type dans le futur mais uniquement le type de comportement (l'interface).
+Exemple : on veut une nouvelle connexion de base de données avec une query string.
+Le pattern peut nous permettre de renvoyer un objet du type DBMySql ou DBOracle selon la query string.</p>
+</li>
+<li>
+<p>Il permet de séparer la création de l'utilisation d'un objet, de plus il permet d'étendre facilement les objets utilisés
+simplement en créant de nouveaux "créateurs d'objets" héritant d'une classe de base.</p>
+</li>
+<li>
+<p>Les <strong>créateurs</strong> peuvent très bien intégrer la logique métier.La fonction du <strong>créateur</strong> n'est pas seulement de créer un objet.
+Il n'est pas forcé de réellement créer l'objet .
+Il peut aller les chercher depuis une bdd, le cache ... pour économiser des ressources aussi.</p>
+</li>
+<li>
+<p>Permettre aux utilisateurs de la librairie, d'étendre ses composants internes.</p>
+</li>
+</ul>
+<h2 id="exemple">Exemple :</h2>
+<p>Ici 2 factory sont présentés pour comprendre l'intérêt.</p>
+<h4 id="la-classe-abstraite-de-la-factory">La classe abstraite de la factory</h4>
+<pre><code>&lt;?php
+
+
+namespace Factory;
+
+
+abstract class ProductFactory
+{
+    abstract public function createProduct() : ProductInterface;
+
+    public function displayProduct():string
+    {
+        echo &quot;Creating a Product ....&quot;;
+
+        $product = $this-&gt;createProduct();
+
+        echo &quot;Calling a product base function from the factory&quot;;
+        echo $product-&gt;getName();
+    }
+}
+</code></pre>
+
+<h4 id="les-2-factory">Les 2 factory</h4>
+<pre><code>&lt;?php
+
+
+namespace Factory;
+
+
+class ConfigurableProductFactory extends ProductFactory
+{
+
+    public function createProduct(): ProductInterface
+    {
+        return new ConfigurableProduct();
+    }
+}
+</code></pre>
+
+<pre><code>&lt;?php
+
+
+namespace Factory;
+
+class SimpleProductFactory extends ProductFactory
+{
+
+    public function createProduct(): ProductInterface
+    {
+        return new SimpleProduct();
+    }
+}
+</code></pre>
+
+<h4 id="linterface-metier">L'interface métier</h4>
+<pre><code>&lt;?php
+
+
+namespace Factory;
+
+
+interface ProductInterface
+{
+    public function getName(): string;
+}
+</code></pre>
+
+<h4 id="les-classes-metiers">Les classes métiers</h4>
+<pre><code>&lt;?php
+
+
+namespace Factory;
+
+
+class ConfigurableProduct implements ProductInterface
+{
+    const NAME = &quot;PRODUCT CONFIGURABLE&quot;;
+
+
+    public function getName(): string
+    {
+        return self::NAME;
+    }
+}
+</code></pre>
+
+<pre><code>&lt;?php
+
+
+namespace Factory;
+
+
+class SimpleProduct implements ProductInterface
+{
+    const NAME = &quot;SIMPLE PRODUCT&quot;;
+
+    public function getName(): string
+    {
+        return self::NAME;
+    }
+}
+</code></pre>
+
+<h4 id="le-code-client-cense-fonctionner-avec-nimporte-quel-productfactory">Le code client censé fonctionner avec n'importe quel ProductFactory</h4>
+<pre><code>&lt;?php
+
+use Factory\ProductFactory;
+
+function clientCode(ProductFactory $factory)
+{
+    echo &quot;Client: I'm not aware of the factory's concrete class, but it still works.\n&quot;;
+         $product = $factory-&gt;createProduct();
+         echo $product-&gt;getName();
+}
+</code></pre>
+
+<h4 id="et-le-code-qui-vas-tester-tout-ca">Et le code qui vas tester tout ça :</h4>
+<pre><code>&lt;?php
+
+require __DIR__ . './../../../../vendor/autoload.php';
+require 'clientCode.php';
+
+use Factory\ConfigurableProductFactory;
+use Factory\SimpleProductFactory;
+
+echo &quot;App: Launched with the ConfigurableProductFactory.\n&quot;;
+clientCode(new ConfigurableProductFactory());
+
+echo &quot;App: Launched with the SimpleProductFactory.\n&quot;;
+clientCode(new SimpleProductFactory());
+</code></pre>
+
+<h4 id="output">Output :</h4>
+<pre><code>App: Launched with the ConfigurableProductFactory.
+Client: I'm not aware of the factory's concrete class, but it still works.
+PRODUCT CONFIGURABLEApp: Launched with the SimpleProductFactory.
+Client: I'm not aware of the factory's concrete class, but it still works.
+SIMPLE PRODUCT
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../builder/" class="btn btn-neutral float-right" title="Builder">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../abstract-factory/" class="btn btn-neutral" title="Abstract Factory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../abstract-factory/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../builder/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
