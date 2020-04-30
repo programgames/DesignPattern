@@ -10,21 +10,21 @@ function clientCode(SimpleProductDirector $director, ConfigurableProductDirector
     $builder = new ECommerceSimpleProductBuilder();
     $director->setBuilder($builder);
 
-    echo "Minimal Simple Product for e-commerce";
+    echo "Minimal Simple Product for e-commerce". PHP_EOL;
     $director->buildMinimalSimpleProduct("OroCommerce sticker");
     $builder->getProduct()->displayInfo();
 
-    echo "Full Simple Product for e-commerce";
+    echo "Full Simple Product for e-commerce". PHP_EOL;
     $director->buildFullSimpleProduct("IPhone 11","The cheapest smartphone","0.99$");
     $builder->getProduct()->displayInfo();
 
     $builder = null;
 
-    echo "Another example to show that we can have another Director with another type of builder";
+    echo "Another example to show that we can have another Director with another type of builder" . PHP_EOL;
     $builder = new ECommerceConfigurableProductBuilder();
     $configurableProductDirector->setBuilder($builder);
 
-    echo "Minimal Configurable Product for e-commerce";
+    echo "Minimal Configurable Product for e-commerce". PHP_EOL;
     $configurableProductDirector->buildMinimalConfigurableProduct('Balloon');
     $builder->getProduct()->displayInfo();
 

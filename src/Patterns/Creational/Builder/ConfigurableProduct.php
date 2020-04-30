@@ -14,6 +14,6 @@ class ConfigurableProduct
 
     public function displayInfo(): void
     {
-        echo "Name :" . $this->name . " Description : " . $this->description;
+        echo "Name : " . $this->name . " Description : " . $this->description . PHP_EOL;
     }
 }

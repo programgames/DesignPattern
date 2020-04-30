@@ -14,6 +14,6 @@ class SimpleProduct
 
     public function displayInfo(): void
     {
-        echo "Name :" . $this->name . " Description : " . $this->description . " Price : " . $this->price;
+        echo "Name : " . $this->name . " Description : " . $this->description . " Price : " . $this->price . PHP_EOL;
     }
 }
