@@ -64,7 +64,7 @@ Permettre de change l'implementation à l'éxécution ( à ne pas confondre avec
 
 #### Output 
 
-````php
+````
 Raw product display :
 Product name : watermelon
 
