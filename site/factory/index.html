@@ -59,6 +59,19 @@
     <ul class="current">
     </ul>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../builder/">Builder</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../prototype/">Prototype</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../singleton/">Singleton</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Structurel</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../adapter/">Adapter</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../bridge/">Bridge</a>
+                    </li>
                 </ul>
       </div>
     </div>
@@ -248,13 +261,11 @@ function clientCode(ProductFactory $factory)
 <h4 id="et-le-code-qui-vas-tester-tout-ca">Et le code qui vas tester tout ça :</h4>
 <pre><code>&lt;?php
 
+require __DIR__ . './../../../../vendor/autoload.php';
+require 'clientCode.php';
+
 use Factory\ConfigurableProductFactory;
 use Factory\SimpleProductFactory;
-
-require __DIR__ . './../../../../vendor/autoload.php';
-
-
-require 'clientCode.php';
 
 echo &quot;App: Launched with the ConfigurableProductFactory.\n&quot;;
 clientCode(new ConfigurableProductFactory());
@@ -276,6 +287,8 @@ SIMPLE PRODUCT
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../builder/" class="btn btn-neutral float-right" title="Builder">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../abstract-factory/" class="btn btn-neutral" title="Abstract Factory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -306,6 +319,8 @@ SIMPLE PRODUCT
       
         <span><a href="../abstract-factory/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../builder/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

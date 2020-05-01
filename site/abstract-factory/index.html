@@ -79,6 +79,19 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../factory/">Factory</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../builder/">Builder</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../prototype/">Prototype</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../singleton/">Singleton</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Structurel</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../adapter/">Adapter</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../bridge/">Bridge</a>
+                    </li>
                 </ul>
       </div>
     </div>
@@ -120,7 +133,7 @@
             <div class="section">
               
                 <h1 id="presentation">Présentation</h1>
-<p>Le pattern abstract factory est un pattern de création.
+<p>Le pattern abstract factory est un design pattern de création.
 Il permet de mettre en place une interface permettant de créer des familles d'objets dans une <strong>super-classe</strong>.
 Mais permet aux sous-classes de changer la famille d'objets créés, ces sous-classes sont appelés les <strong>Creators</strong> tandis
 que la super classe, la <strong>Factory</strong>.</p>
@@ -318,11 +331,11 @@ function clientCode(ProductFactory $factory) {
 <h4 id="et-le-code-qui-vas-tester-tout-ca">Et le code qui vas tester tout ça :</h4>
 <pre><code>&lt;?php
 
-use AbstractFactory\B2BProductFactory;
-use AbstractFactory\B2CProductFactory;
-
 require __DIR__ . './../../../../vendor/autoload.php';
 require 'clientCode.php';
+
+use AbstractFactory\B2BProductFactory;
+use AbstractFactory\B2CProductFactory;
 
 echo &quot;Client: Testing client code with the first factory type:\n&quot;;
 clientCode(new B2BProductFactory());

@@ -13,5 +13,10 @@ nav:
           - Abstract Factory: abstract-factory.md
           - Factory : factory.md
           - Builder: builder.md
+          - Prototype: prototype.md
+          - Singleton: singleton.md
+    - Structurel:
+          - Adapter: adapter.md
+          - Bridge: bridge.md
 plugins:
     - macros

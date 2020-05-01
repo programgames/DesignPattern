@@ -1,10 +1,10 @@
 <?php
 
-use AbstractFactory\B2BProductFactory;
-use AbstractFactory\B2CProductFactory;
-
 require __DIR__ . './../../../../vendor/autoload.php';
 require 'clientCode.php';
+
+use AbstractFactory\B2BProductFactory;
+use AbstractFactory\B2CProductFactory;
 
 echo "Client: Testing client code with the first factory type:\n";
 clientCode(new B2BProductFactory());

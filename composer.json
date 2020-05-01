@@ -21,6 +21,7 @@
             "Builder\\": "src/Patterns/Creational/Builder/",
             "AbstractFactory\\": "src/Patterns/Creational/AbstractFactory/",
             "Adapter\\": "src/Patterns/Structural/Adapter/",
+            "Bridge\\": "src/Patterns/Structural/Bridge/",
             "vendor\\": "vendor/"
         }
     }
