@@ -18,5 +18,6 @@ nav:
     - Structurel:
           - Adapter: adapter.md
           - Bridge: bridge.md
+          - Composite: composite.md
 plugins:
     - macros
