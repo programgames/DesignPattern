@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Julien Marcon">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Présentation - Design Patterns</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Pr\u00e9sentation";
+    var mkdocs_page_input_path = "composite.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Design Patterns</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Création</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../abstract-factory/">Abstract Factory</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../factory/">Factory</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../builder/">Builder</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../prototype/">Prototype</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../singleton/">Singleton</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Structurel</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../adapter/">Adapter</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../bridge/">Bridge</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Design Patterns</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Présentation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/programgames/DesignPattern/edit/master/docs/composite.md"
+          class="icon icon-github"> Edit on Github</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="presentation">Présentation</h1>
+<p>Le pattern composite est un design pattern structurel.
+Il permet de découper des objets en en forme <strong>d'abre</strong>.
+Cela permet d"utiliser ces objets (les feuilles)  individuellement.</p>
+<h1 id="utilite">Utilité</h1>
+<p>Ce pattern est applicables uniquement si le model peut être présenté en forme d'abre.</p>
+<p>Par exemple un dossier ou un composant graphique.</p>
+<p>Un dossier peut en contenir un autre comme pour le composant graphique ( fenetre -&gt; tab -&gt; bouton )</p>
+<h2 id="exemple">Exemple :</h2>
+<h5 id="la-classe-composite-de-base">La classe composite de base :</h5>
+<p>Elle contient les fonctions de base du composite mais
+elle peut définir des fonctions abstraites devant être implémenter dans les classes concretes. </p>
+<pre><code>&lt;?php
+
+namespace Composite;
+
+abstract class LayoutComponent
+{
+    /*
+     * @var LayoutComponent
+     */
+    protected $parent;
+
+    public function getParent()
+    {
+        return $this-&gt;parent;
+    }
+
+    public function setParent($parent)
+    {
+        $this-&gt;parent = $parent;
+    }
+
+    public function add(LayoutComponent $component): void { }
+
+    public function remove(LayoutComponent $component): void { }
+
+    /**
+     * Méthode supplémentaire pour savoir si un composant peut avoir des enfants ( branche )
+     */
+    public function isComposite(): bool
+    {
+        return false;
+    }
+
+    /**
+     * Fonction devant être implémenté dans les classes concretes.
+     */
+    abstract public function display();
+}
+</code></pre>
+
+<h4 id="une-feuille-du-pattern-composite">Une feuille du pattern composite :</h4>
+<pre><code>&lt;?php
+
+namespace Composite;
+
+class LayoutObject extends LayoutComponent
+{
+    /**
+     * LayoutObject constructor.
+     * @param $html
+     */
+    public function __construct($html)
+    {
+        $this-&gt;html = $html;
+    }
+
+    private $html;
+
+    public function getHtml()
+    {
+        return $this-&gt;html;
+    }
+
+    public function setHtml($html)
+    {
+        $this-&gt;html = $html;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function display()
+    {
+        echo $this-&gt;html . PHP_EOL;
+    }
+}
+</code></pre>
+
+<h4 id="une-branche-du-pattern-composite">Une branche du pattern composite :</h4>
+<pre><code>&lt;?php
+
+namespace Composite;
+
+class LayoutObject extends LayoutComponent
+{
+    /**
+     * LayoutObject constructor.
+     * @param $html
+     */
+    public function __construct($html)
+    {
+        $this-&gt;html = $html;
+    }
+
+    private $html;
+
+    public function getHtml()
+    {
+        return $this-&gt;html;
+    }
+
+    public function setHtml($html)
+    {
+        $this-&gt;html = $html;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function display()
+    {
+        echo $this-&gt;html . PHP_EOL;
+    }
+}
+</code></pre>
+
+<h4 id="le-code-client">Le code client :</h4>
+<p>Il peut afficher n'importe quel branche/feuilles</p>
+<pre><code>&lt;?php
+
+use Composite\LayoutComponent;
+
+function clientCode(LayoutComponent $component)
+{
+    $component-&gt;display();
+}
+</code></pre>
+
+<h4 id="le-code-test">Le code test :</h4>
+<pre><code>&lt;?php
+
+require __DIR__ . './../../../../vendor/autoload.php';
+require 'clientCode.php';
+
+use Composite\LayoutContainer;
+use Composite\LayoutObject;
+
+$text = new LayoutObject('&lt;p&gt;I\'m a leaf&lt;/p&gt;');
+$text2 = new LayoutObject('&lt;p&gt;I\'m another leaf&lt;/p&gt;');
+
+echo 'Displaying one leaf : ' . PHP_EOL;
+clientCode($text2);
+
+$div = new LayoutContainer('&lt;div&gt;','&lt;/div&gt;');
+$div-&gt;add($text);
+$div-&gt;add($text2);
+
+$body = new LayoutContainer('&lt;body&gt;','&lt;/body&gt;');
+$body-&gt;add($div);
+
+$htmlTag = new LayoutContainer('&lt;html&gt;','&lt;/html&gt;');
+$htmlTag-&gt;add($body);
+
+echo 'Displaying the tree : ' . PHP_EOL;
+
+clientCode($htmlTag);
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
