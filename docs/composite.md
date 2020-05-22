@@ -48,3 +48,19 @@ Il peut afficher n'importe quel branche/feuilles
 ```
 {% include 'src/Patterns/Structural/Composite/index.php' %}
 ```
+
+#### Output :
+
+```
+Displaying one leaf : 
+<p>I'm another leaf</p>
+Displaying the tree : 
+<html>
+<body>
+<div>
+<p>I'm a leaf</p>
+<p>I'm another leaf</p>
+</div>
+</body>
+</html>
+``` 
