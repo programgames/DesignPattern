@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Julien Marcon">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Présentation - Design Patterns</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Pr\u00e9sentation";
+    var mkdocs_page_input_path = "decorator.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Design Patterns</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Création</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../abstract-factory/">Abstract Factory</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../factory/">Factory</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../builder/">Builder</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../prototype/">Prototype</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../singleton/">Singleton</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Structurel</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../adapter/">Adapter</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../bridge/">Bridge</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../composite/">Composite</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Design Patterns</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Présentation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/programgames/DesignPattern/edit/master/docs/decorator.md"
+          class="icon icon-github"> Edit on Github</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="presentation">Présentation</h1>
+<p>Le Design pattern Décorateur vous permet d'attacher de nouveaux comportements aux objets en plaçant ces objets
+dans des objets wrapper qui respectent leurs contrats (interface).</p>
+<h1 id="utilite">Utilité</h1>
+<p>Evite de créer des sous classes dans tout les sens pour ajouter des comportements spécifiques.
+Il est possible de réutiliser les décorateurs entre eux.
+Il permet d'ajouter des reponsabilités aux classes à l'éxécution sans toucher aux classes original.
+Permet bien sur d'ajouter des comportements aux classes final etant donné que la classe original n'est pas modifié mais juste décoré.</p>
+<h1 id="exemple">Exemple :</h1>
+<h4 id="linterface-de-la-classe-concrete">L'interface de la classe concrete :</h4>
+<pre><code>&lt;?php
+
+namespace Decorator;
+
+interface IBuyer
+{
+    public function buy(Product $product);
+}
+</code></pre>
+
+<h4 id="une-classe-concrete">Une classe concrete</h4>
+<pre><code>&lt;?php
+
+namespace Decorator;
+
+class BaseCustomer implements IBuyer
+{
+    private $money = 500;
+
+    public function buy(Product $product)
+    {
+        echo &quot;Buying &quot; . $product-&gt;getName() . PHP_EOL;
+        $this-&gt;money -= $product-&gt;getPrice();
+    }
+
+    public function getMoney()
+    {
+        return $this-&gt;money;
+    }
+
+    public function setMoney(int $money)
+    {
+        $this-&gt;money = $money;
+    }
+
+    public function displayMoney(int $money)
+    {
+        echo &quot;I have &quot; . $money . &quot; $&quot;;
+    }
+}
+</code></pre>
+
+<h4 id="une-classe-metier">Une classe métier</h4>
+<pre><code>&lt;?php
+
+namespace Decorator;
+
+class Product
+{
+    private $name;
+
+    private $price;
+
+    /**
+     * Product constructor.
+     * @param $name
+     * @param $price
+     */
+    public function __construct($name, $price)
+    {
+        $this-&gt;name = $name;
+        $this-&gt;price = $price;
+    }
+
+    public function getName()
+    {
+        return $this-&gt;name;
+    }
+
+    public function setName($name)
+    {
+        $this-&gt;name = $name;
+    }
+
+    public function getPrice()
+    {
+        return $this-&gt;price;
+    }
+
+    public function setPrice($price)
+    {
+        $this-&gt;price = $price;
+    }
+}
+</code></pre>
+
+<h4 id="un-decorateur-de-la-classe-concrete">Un décorateur de la classe concrete</h4>
+<pre><code>&lt;?php
+
+namespace Decorator;
+
+class BaseCustomerDecorator implements IBuyer
+{
+    /** @var IBuyer */
+    private $decorated;
+
+    /** @var array */
+    private $historic = [];
+
+    /**
+     * BaseCustomerDecorator constructor.
+     * @param $decorated
+     */
+    public function __construct(IBuyer $decorated)
+    {
+        $this-&gt;decorated = $decorated;
+    }
+
+    public function buy(Product $product)
+    {
+        $this-&gt;historic[] = $product;
+        $this-&gt;decorated-&gt;buy($product);
+
+        $this-&gt;showHistoric();
+    }
+
+    public function showHistoric()
+    {
+        echo &quot;Historic : &quot; . PHP_EOL;
+        foreach ($this-&gt;historic as $product) {
+            echo &quot;Product : &quot; . $product-&gt;getName() . &quot; - Price : &quot; . $product-&gt;getPrice() . &quot; $&quot; . PHP_EOL;
+        }
+    }
+}
+</code></pre>
+
+<h4 id="le-code-client-compatible-avec-des-objets-implementant-ibuyer">Le code client compatible avec des objets implémentant IBuyer</h4>
+<pre><code>&lt;?php
+
+use Decorator\IBuyer;
+use Decorator\Product;
+
+function clientCode(IBuyer $buyer, Product $product)
+{
+    $buyer-&gt;buy($product);
+}
+</code></pre>
+
+<h4 id="le-code-test">Le code test</h4>
+<pre><code>&lt;?php
+
+require __DIR__ . './../../../../vendor/autoload.php';
+require 'clientCode.php';
+
+use Decorator\BaseCustomer;
+use Decorator\BaseCustomerDecorator;
+use Decorator\Product;
+
+$product = new Product(&quot;Iphone&quot;,&quot;999&quot;);
+
+echo &quot;The client code is supporting the BaseCustomerObject&quot; .PHP_EOL;
+$simpleCustomer = new BaseCustomer();
+clientCode($simpleCustomer,$product);
+
+echo PHP_EOL . PHP_EOL;
+
+echo &quot;But it can support a decorated Customer aswell&quot; . PHP_EOL;
+$customerWithHistoric = new BaseCustomerDecorator($simpleCustomer);
+clientCode($customerWithHistoric,$product);
+
+
+
+</code></pre>
+
+<h4 id="output">Output</h4>
+<p>```The client code is supporting the BaseCustomerObject
+   Buying Iphone</p>
+<p>But it can support a decorated Customer aswell
+   Buying Iphone
+   Historic : 
+   Product : Iphone - Price : 999 $
+```</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
