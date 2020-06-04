@@ -50,12 +50,13 @@ Permet bien sur d'ajouter des comportements aux classes final etant donné que l
 
 #### Output 
 
-```The client code is supporting the BaseCustomerObject
-   Buying Iphone
-   
-   
-   But it can support a decorated Customer aswell
-   Buying Iphone
-   Historic : 
-   Product : Iphone - Price : 999 $
+```
+The client code is supporting the BaseCustomerObject
+Buying Iphone
+
+
+But it can support a decorated Customer aswell
+Buying Iphone
+Historic : 
+Product : Iphone - Price : 999 $
 ```
