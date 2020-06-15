@@ -24,6 +24,7 @@
             "Bridge\\": "src/Patterns/Structural/Bridge/",
             "Composite\\": "src/Patterns/Structural/Composite/",
             "Decorator\\": "src/Patterns/Structural/Decorator/",
+            "Facade\\": "src/Patterns/Structural/Facade/",
             "vendor\\": "vendor/"
         }
     }
