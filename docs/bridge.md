@@ -8,7 +8,7 @@ Il permet de découper une classe ou un ensemble de classe en deux hiérarchie.
 
 # Utilité
 
-Découper une classe monolitic qui a beaucoup de fonctionnalitées.
+Découper une classe monolithic qui a beaucoup de fonctionnalités.
 Permettre d'étendre une classe en différentes classes avec leurs spécificités.
 Permettre de change l'implementation à l'éxécution ( à ne pas confondre avec le pattern Strategy).
 

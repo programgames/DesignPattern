@@ -5,10 +5,10 @@ dans des objets wrapper qui respectent leurs contrats (interface).
 
 # Utilité
 
-Evite de créer des sous classes dans tout les sens pour ajouter des comportements spécifiques.
+Éviter de créer des sous classes dans tout les sens pour ajouter des comportements spécifiques.
 Il est possible de réutiliser les décorateurs entre eux.
-Il permet d'ajouter des reponsabilités aux classes à l'éxécution sans toucher aux classes original.
-Permet bien sur d'ajouter des comportements aux classes final etant donné que la classe original n'est pas modifié mais juste décoré.
+Il permet d'ajouter des responsabilités aux classes à l'éxécution sans toucher aux classes originale.
+Permet bien sur d'ajouter des comportements aux classes finales étant donné que la classe originale n'est pas modifié mais juste décoré.
 
 # Exemple :
 

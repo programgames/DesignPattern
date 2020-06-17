@@ -1,15 +1,15 @@
 # Présentation
 
-Le Design pattern Facade met à disposition une interface simplifié d'une librairie/framework/ensemble complexe de classe.
+Le Design pattern Facade met à disposition une interface simplifiée d'une librairie/framework/ensemble complexe de classe.
 
 # Utilité
 
 Il permet de séparer la logique métier avec l'utilisation du framework pour éviter un couplage inutile et difficilement
 maintenable.
 
-La facade est trés pratique lorsque votre application utilise une librairie avec énormément de fonctionnalitées.
-Elle vas vous permettre d'afficher que les fonctionnalitées dont vous avez besoin.
-La facade permet de structurer des sous systeme en couches.
+La facade est très pratique lorsque votre application utilise une librairie avec énormément de fonctionnalités.
+Elle vas vous permettre d'afficher que les fonctionnalités dont vous avez besoin.
+La facade permet de structurer des sous système en couches.
 
 # Exemple :
 

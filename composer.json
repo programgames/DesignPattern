@@ -25,6 +25,7 @@
             "Composite\\": "src/Patterns/Structural/Composite/",
             "Decorator\\": "src/Patterns/Structural/Decorator/",
             "Facade\\": "src/Patterns/Structural/Facade/",
+            "Flyweight\\": "src/Patterns/Structural/Flyweight/",
             "vendor\\": "vendor/"
         }
     }

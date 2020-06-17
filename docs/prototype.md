@@ -10,7 +10,7 @@ Il permet de dupliquer des objets sans se confronter à des problèmes tels que 
 # Utilité
 
 Il délègue la responsabilité du clonage à l'objet en lui-même.
-Le pattern déclare une interface commune pour tous les objets qui supporte le clonage.
+Le pattern déclare une interface commune pour tous les objets qui supportent le clonage.
 
 Utiliser ce pattern lorsque votre code ne doit pas être couplé avec la classe concrètes.
 # Notes 

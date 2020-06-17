@@ -6,7 +6,7 @@ et représentations de cet objet en utilisant le meme code de construction.
 
 # Utilité
 
-Se débarrasser de constructeurs avec beaucoup de parametres ou bien de classes avec plein de constructeurs ( C++ )
+Se débarrasser de constructeurs avec beaucoup de paramètres ou bien de classes avec plein de constructeurs ( C++ )
 À Utiliser lorsqu'on souhaite créer différentes représentations d'un produit ( Ex : Maison en bois, Maison en pierre ...)
 ou des objets complexes ( arbres composite ... )
 
