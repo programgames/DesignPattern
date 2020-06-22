@@ -2,7 +2,7 @@
 
 use Facade\Facade;
 
-function clientCode(Facade $facade,$id)
+function clientCode(Facade $facade, $id)
 {
     echo $facade->getProductInfoById($id);
 }

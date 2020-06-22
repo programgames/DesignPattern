@@ -3,7 +3,6 @@
 
 namespace AbstractFactory;
 
-
 class B2CProduct implements Product
 {
     const NAME = "B2C PRODUCT";

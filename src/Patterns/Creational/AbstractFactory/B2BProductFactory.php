@@ -3,10 +3,8 @@
 
 namespace AbstractFactory;
 
-
 class B2BProductFactory implements ProductFactory
 {
-
     public function createProduct(): Product
     {
         return new B2BProduct();

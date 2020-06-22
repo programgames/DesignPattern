@@ -22,5 +22,5 @@ abstract class PageController
         $this->pageRenderer = $renderer;
     }
 
-    abstract public function  getView(): string;
+    abstract public function getView(): string;
 }

@@ -7,8 +7,7 @@ use Structural\Adapter\ClientInterface;
  * @param ClientInterface $client
  * @param $message
  */
-function clientCode(ClientInterface $client,$message)
+function clientCode(ClientInterface $client, $message)
 {
     echo $client->sendRequest($message);
-
 }

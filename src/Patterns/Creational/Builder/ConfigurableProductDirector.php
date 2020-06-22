@@ -3,7 +3,6 @@
 
 namespace Builder;
 
-
 class ConfigurableProductDirector
 {
     /**

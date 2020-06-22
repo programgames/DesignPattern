@@ -3,7 +3,6 @@
 
 namespace AbstractFactory;
 
-
 class B2BProduct implements Product
 {
     const B2BProduct = "B2B PRODUCT";
@@ -13,6 +12,6 @@ class B2BProduct implements Product
      */
     public function getName(): string
     {
-       return self::B2BProduct;
+        return self::B2BProduct;
     }
 }

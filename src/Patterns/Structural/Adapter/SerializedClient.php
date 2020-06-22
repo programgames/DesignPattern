@@ -3,7 +3,6 @@
 
 namespace Structural\Adapter;
 
-
 class SerializedClient
 {
     public function sendSerialized($data)

@@ -12,7 +12,7 @@ class ProductSimplePageController extends PageController
      * @param Product $product
      * @param ProductRenderer $pageRenderer
      */
-    public function __construct(Product $product,ProductRenderer $pageRenderer)
+    public function __construct(Product $product, ProductRenderer $pageRenderer)
     {
         parent::__construct($pageRenderer);
         $this->product = $product;

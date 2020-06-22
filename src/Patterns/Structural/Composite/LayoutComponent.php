@@ -19,9 +19,13 @@ abstract class LayoutComponent
         $this->parent = $parent;
     }
 
-    public function add(LayoutComponent $component): void { }
+    public function add(LayoutComponent $component): void
+    {
+    }
 
-    public function remove(LayoutComponent $component): void { }
+    public function remove(LayoutComponent $component): void
+    {
+    }
 
     /**
      * Méthode supplémentaire pour savoir si un composant peut avoir des enfants ( branche )

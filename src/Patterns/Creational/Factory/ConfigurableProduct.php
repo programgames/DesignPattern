@@ -3,7 +3,6 @@
 
 namespace Factory;
 
-
 class ConfigurableProduct implements ProductInterface
 {
     const NAME = "PRODUCT CONFIGURABLE";

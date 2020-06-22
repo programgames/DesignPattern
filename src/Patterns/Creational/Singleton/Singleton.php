@@ -3,14 +3,17 @@
 
 namespace Creational\Singleton;
 
-
 class Singleton
 {
     private static $instances = [];
 
-    protected function __construct() { }
+    protected function __construct()
+    {
+    }
 
-    protected function __clone() { }
+    protected function __clone()
+    {
+    }
 
 
     public function __wakeup()
