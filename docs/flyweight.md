@@ -30,26 +30,6 @@ On vas montrer dans cet exemple les 2 cas suivants:
 {% include 'src/Patterns/Structural/Flyweight/Website.php' %}
 ```
 
-### Le code client utilisé dans les 2 exemples 
-
-```
-{% include 'src/Patterns/Structural/Flyweight/clientCode.php' %}
-```
-
-### le fichier test : 
-
-```
-{% include 'src/Patterns/Structural/Flyweight/index_no_pattern.php' %}
-```
-
-### output sans poid-mouche : 
-
-```
-Memory in use: 309.32447814941MB
-```
-
-300 MB de mémoire utilisé;
-
 ### Le poid-mouche et la factory :
 
 ```
@@ -60,7 +40,27 @@ Memory in use: 309.32447814941MB
 {% include 'src/Patterns/Structural/Flyweight/ProductFlyWeightFactory.php' %}
 ```
 
-### Le fichier test :
+### Le code client utilisé dans les 2 exemples 
+
+```
+{% include 'src/Patterns/Structural/Flyweight/clientCode.php' %}
+```
+
+### Le fichier test sans poid-mouche : 
+
+```
+{% include 'src/Patterns/Structural/Flyweight/index_no_pattern.php' %}
+```
+
+### Output sans poid-mouche : 
+
+```
+Memory in use: 309.32447814941MB
+```
+
+300 MB de mémoire utilisé;
+
+### Le fichier test  avec poid-mouche:
 
 ```
 {% include 'src/Patterns/Structural/Flyweight/index.php' %}
@@ -68,7 +68,6 @@ Memory in use: 309.32447814941MB
 
 ### Output avec flyweight : 
 
-```
 ...
 
 Unique state : 7pAGzhlrbs - intrinsic state : DISCOUNTSHOP 
