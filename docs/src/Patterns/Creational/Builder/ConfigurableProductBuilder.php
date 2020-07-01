@@ -3,7 +3,6 @@
 
 namespace Builder;
 
-
 interface ConfigurableProductBuilder
 {
     public function setName(string $name): void;

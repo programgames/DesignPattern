@@ -3,7 +3,6 @@
 
 namespace Builder;
 
-
 class SimpleProductDirector
 {
     /**
@@ -21,7 +20,7 @@ class SimpleProductDirector
         $this->builder->setName($name);
     }
 
-    public function buildFullSimpleProduct(string $name,string $description,string $price): void
+    public function buildFullSimpleProduct(string $name, string $description, string $price): void
     {
         $this->builder->setName($name);
         $this->builder->setPrice($price);

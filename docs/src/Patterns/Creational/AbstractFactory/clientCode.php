@@ -2,8 +2,8 @@
 
 use AbstractFactory\ProductFactory;
 
-function clientCode(ProductFactory $factory) {
-
+function clientCode(ProductFactory $factory)
+{
     $product = $factory->createProduct();
     $price = $factory->createPrice();
 

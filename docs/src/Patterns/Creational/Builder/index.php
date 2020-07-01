@@ -8,4 +8,4 @@ use Builder\SimpleProductDirector;
 
 $simpleProductDirector = new SimpleProductDirector();
 $configurableProductDirector =  new ConfigurableProductDirector();
-clientCode($simpleProductDirector,$configurableProductDirector);
+clientCode($simpleProductDirector, $configurableProductDirector);

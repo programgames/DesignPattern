@@ -11,7 +11,7 @@ class ProductFullPageController extends PageController
      * @param Product $product
      * @param ProductRenderer $productRenderer
      */
-    public function __construct(Product $product,ProductRenderer $productRenderer)
+    public function __construct(Product $product, ProductRenderer $productRenderer)
     {
         parent::__construct($productRenderer);
         $this->product = $product;

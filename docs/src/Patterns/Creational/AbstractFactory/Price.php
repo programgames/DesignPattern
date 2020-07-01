@@ -3,7 +3,6 @@
 
 namespace AbstractFactory;
 
-
 interface Price
 {
     /**

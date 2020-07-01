@@ -3,7 +3,6 @@
 
 namespace Factory;
 
-
 class SimpleProduct implements ProductInterface
 {
     const NAME = "SIMPLE PRODUCT";

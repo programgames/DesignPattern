@@ -3,7 +3,6 @@
 
 namespace Builder;
 
-
 class ConfigurableProduct
 {
     public $name;

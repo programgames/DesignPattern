@@ -3,7 +3,6 @@
 
 namespace Factory;
 
-
 abstract class ProductFactory
 {
     abstract public function createProduct() : ProductInterface;

@@ -12,9 +12,9 @@ use Bridge\ProductSimplePageController;
 $rawRenderer = new RawProductRenderer();
 $htmlRenderer = new HtmlProductRenderer();
 
-$product = new Product('9.99','watermelon');
+$product = new Product('9.99', 'watermelon');
 
-$controller = new ProductSimplePageController($product,$rawRenderer);
+$controller = new ProductSimplePageController($product, $rawRenderer);
 echo "Raw product display :\n";
 clientCode($controller);
 echo "\n\n";

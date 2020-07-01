@@ -11,6 +11,6 @@ use Facade\ProductApi;
 $productApi = new ProductApi();
 $categoryApi = new CategoryApi();
 
-$facade = new Facade($categoryApi,$productApi);
+$facade = new Facade($categoryApi, $productApi);
 
-clientCode($facade,1);
+clientCode($facade, 1);

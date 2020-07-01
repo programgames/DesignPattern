@@ -3,7 +3,6 @@
 
 namespace AbstractFactory;
 
-
 class B2BPrice implements Price
 {
 

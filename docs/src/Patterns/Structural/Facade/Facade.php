@@ -4,7 +4,6 @@ namespace Facade;
 
 class Facade
 {
-
     protected $categoryApi;
 
     protected $productApi;
@@ -27,17 +26,16 @@ class Facade
         $info .= 'Name : ' . $this->productApi->getProductNameById($id) . ' -  ';
 
         $info .= 'Price : ' . $this->productApi->getProductPriceByName(
-                $this->productApi->getProductNameById($id)
-            ) . ' -  ';
+            $this->productApi->getProductNameById($id)
+        ) . ' -  ';
 
         $info .= 'Category : ' . $this->categoryApi->getCategoryByProductName(
-                $this->productApi->getProductPriceByName(
+            $this->productApi->getProductPriceByName(
                     $this->productApi->getProductNameById($id)
                 )
-            ) . PHP_EOL;
+        ) . PHP_EOL;
 
 
         return $info;
     }
-
 }

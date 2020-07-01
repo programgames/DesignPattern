@@ -3,7 +3,6 @@
 
 namespace Structural\Adapter;
 
-
 class SerializedToJsonAdapter implements ClientInterface
 {
     /** @var SerializedClient */
