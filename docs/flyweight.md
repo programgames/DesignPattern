@@ -68,8 +68,7 @@ Memory in use: 309.32447814941MB
 
 ### Output avec flyweight : 
 
-...
-
+```
 Unique state : 7pAGzhlrbs - intrinsic state : DISCOUNTSHOP 
 Client: Adding a car to database.
 FlyweightFactory: Reusing existing flyweight.
